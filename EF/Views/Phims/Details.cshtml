@@ -1,0 +1,58 @@
+﻿@model EF.Models.Phim
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>Phim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiPhim.TenLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiPhim.TenLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_Phim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_Phim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dao_Dien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dao_Dien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Khoi_Chieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Khoi_Chieu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ID_Phim }) |
+    @Html.ActionLink("Quay Lại", "Index")
+</p>

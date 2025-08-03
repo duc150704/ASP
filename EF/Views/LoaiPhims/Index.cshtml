@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EF.Models.LoaiPhim>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh Sách thể loại phim</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.ID_LoaiPhim }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.ID_LoaiPhim }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.ID_LoaiPhim })
+        </td>
+    </tr>
+}
+
+</table>

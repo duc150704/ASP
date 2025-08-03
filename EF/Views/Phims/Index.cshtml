@@ -1,0 +1,63 @@
+﻿@model IEnumerable<EF.Models.Phim>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiPhim.TenLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten_Phim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dao_Dien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngay_Khoi_Chieu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiPhim.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_Phim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dao_Dien)
+        </td>
+        <td>
+            @{
+                string ImagePath = "~/wwwroot/imgs/" + item.Anh;
+            }
+            <img src="@Url.Content(ImagePath)" width="100" class="imgthumbnail" />
+            <br />
+            @Html.DisplayFor(modelItem => item.Anh)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngay_Khoi_Chieu)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.ID_Phim }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.ID_Phim }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.ID_Phim })
+        </td>
+    </tr>
+}
+
+</table>

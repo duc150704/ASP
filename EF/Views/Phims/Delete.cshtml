@@ -1,0 +1,64 @@
+﻿@model EF.Models.Phim
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Xóa</h2>
+
+<h3>Bạn có chắc muốn xóa?</h3>
+<div>
+    <h4>Phim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiPhim.TenLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiPhim.TenLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_Phim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_Phim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dao_Dien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dao_Dien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay_Khoi_Chieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay_Khoi_Chieu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>
